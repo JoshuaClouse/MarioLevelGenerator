@@ -72,7 +72,9 @@ class Individual_Grid(object):
         right = width - 1
         for y in range(height):
             for x in range(left, right):
-                pass
+                if self.genome[y][x] == 'T':
+					for h in range(y):
+						self.genome[h][x] = '|'
         return genome
 
     # Create zero or more children from self and other
@@ -86,9 +88,12 @@ class Individual_Grid(object):
             for x in range(left, right):
                 # STUDENT Which one should you take?  Self, or other?  Why?
                 # STUDENT consider putting more constraints on this to prevent pipes in the air, etc
-                pass
+				if(x%2 == 0):
+					new_genome[y][x] = self.genome[y][x]
+				else:
+					new_genome[y][x] = other.genome[y][x]
         # do mutation; note we're returning a one-element tuple here
-        return (Individual_Grid(new_genome),)
+        return (mutate(Individual_Grid(new_genome), new_genome))
 
     # Turn the genome into a level string (easy for this genome)
     def to_level(self):
