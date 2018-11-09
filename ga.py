@@ -10,7 +10,7 @@ import math
 
 width = 200
 height = 16
-
+rando = False
 options = [
     "-",  # an empty space
     "X",  # a solid wall
@@ -73,8 +73,8 @@ class Individual_Grid(object):
         for y in range(height):
             for x in range(left, right):
                 if self.genome[y][x] == 'T':
-					for h in range(y):
-						self.genome[h][x] = '|'
+                    for h in range(y):
+                        self.genome[h][x] = '|'
         return genome
 
     # Create zero or more children from self and other
@@ -88,12 +88,13 @@ class Individual_Grid(object):
             for x in range(left, right):
                 # STUDENT Which one should you take?  Self, or other?  Why?
                 # STUDENT consider putting more constraints on this to prevent pipes in the air, etc
-				if(x%2 == 0):
-					new_genome[y][x] = self.genome[y][x]
-				else:
-					new_genome[y][x] = other.genome[y][x]
+                if(x%2 == 0):
+                    new_genome[y][x] = self.genome[y][x]
+                else:
+                    new_genome[y][x] = other.genome[y][x]
         # do mutation; note we're returning a one-element tuple here
-        return (mutate(Individual_Grid(new_genome), new_genome))
+        new_genome = Individual_Grid(new_genome).mutate(new_genome)
+        return (Individual_Grid(new_genome),)
 
     # Turn the genome into a level string (easy for this genome)
     def to_level(self):
@@ -352,6 +353,29 @@ def generate_successors(population):
     results = []
     # STUDENT Design and implement this
     # Hint: Call generate_children() on some individuals and fill up results.
+    parent1 = None#the random parent
+    parent2 = None #the elitist parent
+    if rando:
+        for i in range(0, len(population)-1):
+            #if grid.fitness() > average:
+            parent2 = population[random.randint(0, len(population)-1)]
+            parent1 = population[random.randint(0, len(population)-1)]
+            while parent1 == parent2:
+                parent1 = population[random.randint(0, len(population)-1)]
+            results.append(parent1.generate_children(parent2)[0])
+    else:
+        #print("whoops")
+        populashun = sorted(population, key=lambda x: x.fitness(), reverse = True)
+        #populashun = population
+        # for i in range(0, len(populashun)-1):
+        #     print(str(populashun[i].fitness()))
+        parent1 = populashun[0]
+        for i in range(1, len(populashun)-1):
+            parent2 = populashun[i]
+            results.append(parent1.generate_children(parent2)[0])
+        parent1 = populashun[1]
+        parent2 = populashun[2]
+        results.append(parent1.generate_children(parent2)[0])
     return results
 
 
@@ -384,6 +408,8 @@ def ga():
                 now = time.time()
                 # Print out statistics
                 if generation > 0:
+                    print(str(population))
+                    #print(str(key=Individual.fitness))
                     best = max(population, key=Individual.fitness)
                     print("Generation:", str(generation))
                     print("Max fitness:", str(best.fitness()))
@@ -395,6 +421,8 @@ def ga():
                 generation += 1
                 # STUDENT Determine stopping condition
                 stop_condition = False
+                if len(population) <= 2:
+                    stop_condition = True
                 if stop_condition:
                     break
                 # STUDENT Also consider using FI-2POP as in the Sorenson & Pasquier paper
