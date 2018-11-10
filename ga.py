@@ -10,7 +10,7 @@ import math
 
 width = 200
 height = 16
-rando = False
+rando = True
 options = [
     "-",  # an empty space
     "X",  # a solid wall
@@ -46,11 +46,12 @@ class Individual_Grid(object):
         # STUDENT Modify this, and possibly add more metrics.  You can replace this with whatever code you like.
         coefficients = dict(
             meaningfulJumpVariance=0.5,
-            negativeSpace=0.6,
+            negativeSpace=0.0,
             pathPercentage=0.5,
             emptyPercentage=0.6,
             linearity=-0.5,
             solvability=2.0
+            # decorationPercentage=0.0
         )
         self._fitness = sum(map(lambda m: coefficients[m] * measurements[m],
                                 coefficients))
@@ -67,14 +68,103 @@ class Individual_Grid(object):
         # STUDENT implement a mutation operator, also consider not mutating this individual
         # STUDENT also consider weighting the different tile types so it's not uniformly random
         # STUDENT consider putting more constraints on this to prevent pipes in the air, etc
-
-        left = 1
+        boneZoneTop = 6
+        boneZoneMiddle = 11
+        boneZoneBottom = height - 1
+        numPipes = 0
+        numQBlocks = 0
+        left = 0
         right = width - 1
         for y in range(height):
             for x in range(left, right):
-                if self.genome[y][x] == 'T':
-                    for h in range(y):
-                        self.genome[h][x] = '|'
+                #for the first column
+                if(x == 0):
+                    for h in range(height-1):
+                        if self.genome[h][x] != 'm':
+                            genome[h][x] = '-'
+                        else:
+                            genome[h][x] = self.genome[h][x]
+                #for every other column that's not the first
+                else:
+                    if self.genome[y][x] == 'o':
+                        # give Coins some probability chance to survive mutation
+                        if random.randint(0,10) < 2:
+                            genome[y][x] = '-'
+
+                    if self.genome[y][x] == 'E':
+                        # give Enemies some probability chance to survive mutation
+                        if random.randint(0,10) < 2:
+                            genome[y][x] = '-'
+
+                    if self.genome[y][x] == 'X' and y < height-1:
+                        # give obstacles some probability chance to survive mutation
+                        if random.randint(0,10) <= 2:
+                            genome[y][x] = '-'
+
+                    if self.genome[y][x] == '?' or self.genome[y][x] == 'M' or self.genome[y][x] == 'B':
+                        # give obstacles some probability to survive mutation
+                        if random.randint(0,10) <= 2:
+                            genome[y][x] = '-'
+
+                    # we find a potential broken pipe
+                    if self.genome[y][x] == '|':
+                        if self.genome[y-1][x] != 'T':
+                            # mutate to empty if pipe is broken for sure
+
+                            genome[y][x] = '-'
+                        else: 
+                            if y-1 < height - 7:
+                                # if there is a pipe top but higher than jump height, remove
+                                genome[y][x] = '-'
+                            else:
+                                genome[y][x] = '|'
+
+                    if self.genome[y][x] == 'T':
+                        if y > height - 5 and numPipes < 10:
+                            #print(str(x))
+                            #genome[y][x] = 'T'
+                            for h in range(y+1, height):
+                                #print(str(h))
+                                numPipes += 1
+                                genome[h][x] = '|'
+                                genome[h][x+1] = '-'
+                        else:
+                            genome[y][x] = '-'
+
+                    # give every cell a smol chance of placing an enemy
+                    if y > height-1 and random.uniform(0,1) < 0.01:
+                        if self.genome[y][x] != 'T' or self.genome[y][x] != '|':
+                            genome[y][x] = 'E'
+
+                    #checks to see if an empyt spot is available in the bone zone
+                    if y > boneZoneTop and y < boneZoneBottom:
+                        #if the block is either a quesion mark, or a brick
+                        if self.genome[y][x] == 'B' or self.genome[y][x] == 'M' or self.genome[y][x] == '?':
+                            # print("in first if")
+                            #if the next block isn't one of the solid blocks we want to check to see if we can add a new one
+                            if self.genome[y][x+1] == '-':
+                                # print("next block is a space")
+                                numBlocks = 0
+                                x1 = x
+                                #we want to check how many blocks in a row there are so we can either increase or decreas the chance of spawing in a new one
+                                while(self.genome[y][x1] == 'B' or self.genome[y][x1] == 'M' or self.genome[y][x1] == '?'):
+                                    x1 -= 1
+                                    numBlocks += 1
+                                # print(str(numBlocks))
+                                if random.uniform(0,1) < (75/numBlocks) * .01 - abs(y-boneZoneMiddle) * 0.13:
+                                    # print("adding new block")
+                                    choice = random.uniform(0,1)
+                                    if choice < .5:
+                                        genome[y][x+1] = 'B'
+                                    elif choice < .75:
+                                        genome[y][x+1] = 'M'
+                                    else:
+                                        genome[y][x+1] = '?'
+                    if self.genome[y][x] == '-':
+                        choice = random.uniform(0,1)
+                        if choice > .90:
+                            genome[y][x] = 'o'
+
         return genome
 
     # Create zero or more children from self and other
@@ -84,11 +174,13 @@ class Individual_Grid(object):
         # do crossover with other
         left = 1
         right = width - 1
+
         for y in range(height):
             for x in range(left, right):
                 # STUDENT Which one should you take?  Self, or other?  Why?
                 # STUDENT consider putting more constraints on this to prevent pipes in the air, etc
-                if(x%2 == 0):
+
+                if(x%2==0):
                     new_genome[y][x] = self.genome[y][x]
                 else:
                     new_genome[y][x] = other.genome[y][x]
