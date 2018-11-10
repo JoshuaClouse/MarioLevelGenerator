@@ -1,0 +1,16 @@
+?-T-E-|-o-X-?-T-T-B-|-X-B-|---M-M-----o-o-B-?-X---X-?-B---?---M-X-?-X-E-o-T-T-E-?-E-E-|---E-M---|-|-|---T-B-T---|-X-X-|-B-|-M-B---M-|-M-E-o-?---o-|-o-T-E-?-E-B-X-E-X---|-M-B-T-B---o-|-B-B-?-X---T-|-||
+|-E-o-E-X-----E-|-o---?-T-|-?-?-B---|-|---T-M-o-T-|-B---o-X-E-X-?-X-----o-|-T---?-M---M-o-B-B-X-E-X-X-?-T-|-E-?-B-X-E-M-?-B-T-|-M---E-|-X-T---o-|-M-|-X-X-?-|-?-?-E-B-|-B-X-E-o-?-|-T---M-o-T-|-?-?-T-EM
+X-M-T-B-M-X-T-E---M-?-B---o-B-T-M-|-M-M-E-T-T-X-?---T-M-T-E---X---|-?-E-|-M-|-T-X-|-|---|-M-o-|-B-X-X---E-E-|---T-?---T-B---X-M-T-|-B-|-|-M-o---M-E-|-B-o-B-T---M-E-o-M-E-X-M-?-B-B-X-X-?-T-|-|-E-M---?-
+E-E-X-o-|-?-|-|-X-E-M---M-B-M-T-X-o-E-T-?-E-|-E-|-|-T-|-E-|-M-----?-B---T-X-E-?-E-M-E-o-?-|-?---|-T-o-B-?-T-o-o-X-|-B-X-E---B-E-E-o-|-B-X-T-X-M-M---M-T-B-?-o-M-B-o-|-o-T-T-|-E-|-?-o-|-o-T-X-M-o-|-E-XT
+E-X-X-M-E-M-X-T---B-B-|---?-o-B-E-?-X-E-o-T-?-E---X-|-T-E-o-M-|---|---|---T-X-T---X-|-o-o-B-M-E-o-T-T-X-X-|-?-E-B-X-|-?-M-?-?-T-T-o-E-T-o-?-B---T-|-?---X-X-X-T-?-o-M-o-|-E-B-?-M---T-B-M-?-|-o-M-?-|-oT
+E-o-T-?-E---?-|-|-|-o-|-o-X---|-|-o-E-T-B-o-X-|-o-?-o---o-T-|-E---|-B-B-B-o-B-B-o-B-?-|-|-o-|-o-B-X-E-M-X-|-B-o-|-X-B-o-X---T-o-o-X-B-B-o-E-o-------M-M---E-M-M---M-o-o-?-?-B-T-T-?-o-o-E-X-M---T-|-B-TX
+|---T-M---o-o-X-E-B-B-o---o-B-?-----B-B-?-o-X-o-|---T-E-T-B-o-?-o-T-X-|-X-E-o-|-X-B-B-o-M-E-o-?-B-M-X-X-X-T-T-M-o-|-?-E-----o-E-X-M-B-?-E-M-E-o-X-?---X-?-M-?---M-o-X-E-o-E-T-?-X-B-M-M-M-E-o-M-E-M-T-?o
+o-?-o-|-|-o-o-B-X-B-E-?-M-X-E-o-T-B-|-B---X-B---M-M-E-T-?-X-X-T-M-X-|-X-|-?-E-T-M-B-M-M-|-?-E-M-M-o-E-|-E-T-|-?-?-|-T-E-B-T-T-o-|-o---M-|-|-M-E-B-?-?---|-M-M-T-|-B---?-o---B-E-|-M---E-E-E-|-E-X-X-X-|v
+M-|-o-B-M-E-|-|---M-----o-o-X-?-M-E-X-T-B-o-?-M-E-?-o-X-M-X-M---X-|-E-M-T-|-E-X-E---B-o---M-|-M-X-B-|-T-M-M-o-T-|-M-T---E-X-----X---?-o-?-E-T-?-o-?-E-B-X-B-M-?---M-T-B---E-o-T-o---X-o-M-T---X-E-o-X-|B
+o-X-E-?-?-E-|-|-o-T-|---E-T-o-E-E-T-|-o-o-?---?-X-B-M-B-o-|-X---E-|-o-E---B-X-M-M-?-B-T-X-E-X-X-E-T-o-E-B-o-|-M-o-B-?-B-o-T-o-M-o-|-X-M-M-|-|-B-o---E-X-o-X-M-|-o-o-X-o-o-E-o-M---|-o-T-o-X---B-o-B---MX
+--B-T-B-M-X-T-E---E-o-E-?-o---?-M-o-o-o---E-T-B-X-B-|-T-T-E-B-T---E-T-T-o-?-E---B-|-|-M-|---X-o-X-B-T-M-|-X-|-o-E-|-T-o-?-M-X-?-|-M-T---M-o-M-T---o-X-B-M-o-M-?-o-B-T-X-B-B-|-T-B-?-B-o-?-X-E-|---o-|-|B
+B-o-B-o-|-?-B-B-X---|-X-|-B-E-X---T-B-T-o-X-|-o-T-o-M-T-M-X-M-o-|-T-B---?-X-o-B-M-B-X-X-o---M---o-M-T-o-B-B-?-M-M-|-E-o-M---o---|-E-M-B-T-X-?-M-T-X-M-M-?-o-?-----E-M-E-E-M-X-B-B-T---o-?-|-B-?-T-E-|-?|
+M-E-B-M-X---E-M-E-T-X-E-E-?-?-T-M-T---?-M-T-|-|-T-o-M-o---M-----o-B---T-B-?-o-T-X-?-E-M-T-?-o-E-X---E-M-B-E-X---E-E---M-T-X-M-?-E-o-?-T-T-T-o---B-M-B-M-X-?-|---M-M-B-T-?-|-|-E-M-E-?-o-|-o-B-|-T-T-?-?T
+X-|-B-E-E---o-o-T-T-B-E-|-?-|-E---|-T---o-|-E-M-T-X-M-E-E---T-X-M-B-M-T-o-?-T-T-o-?-?-E---?-|-M-M-?-o-o-T-T-M-B-o-|-X-o-E-|---E-X-|-E-E-X-o-T-T-X-o-|---?-|-X-M-o---E-o-?-M---E---o-?-?-E-X-|-M-o-X-T-X-
+m-o-T-X-B-?-|-|-?-?-X-M-X-T-X-M-?-B---T-E---?-T-T---X-|-X-E-X---X-E-?-M-E-M---?-?-M-X-E-X-E-X-B-T-X-?-E---T-M-|-?-o-T-B-M-|-E-X-T-E-?-|-?-T---M-|-M-o-X-T-|-B-B-X-E-B-M---M-o-M-M-|-B-o-T-E-|-M---T-B-B-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
